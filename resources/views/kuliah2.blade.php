@@ -35,7 +35,7 @@
                     @endforeach   
                 </center>
             </div>
-        </div>
+          </div>
         <!-- /.content -->
     </div>
 </section>
