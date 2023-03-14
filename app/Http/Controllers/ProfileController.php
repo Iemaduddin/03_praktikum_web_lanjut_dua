@@ -3,22 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Content;
 
 class ProfileController extends Controller
 {
-    public function index()
+    public function profile1()
     {
-        return view('profile')
-            ->with('full_name', 'Iemaduddin')
-            ->with('short_name', 'Didin')
-            ->with('nim', '2141720055')
-            ->with('absen', '14')
-            ->with('class', 'TI-2F')
-            ->with('prodi', 'D4 Teknik Informatika')
-            ->with('jurusan', 'Jurusan Teknologi Informasi')
-            ->with('kampus', 'Politeknik Negeri Malang')
-            ->with('email', 'iemaduddin17@gmail.com')
-            ->with('nohp', '082331311947')
-            ->with('ig', '@didinn_id');
+        $profile1 = Content::where('short_name', 'Didin')->get();
+        return view('profile1', compact('profile1'));
+    }
+    public function profile2()
+    {
+        $profile2 = Content::where('short_name', 'Endar')->get();
+        return view('profile2', compact('profile2'));
+    }
+    public function kuliah1()
+    {
+        $kuliah1 = Content::where('short_name', 'Didin')->get();
+        return view('kuliah1', compact('kuliah1'));
+    }
+    public function kuliah2()
+    {
+        $kuliah2 = Content::where('short_name', 'Endar')->get();
+        return view('kuliah2', compact('kuliah2'));
     }
 }
